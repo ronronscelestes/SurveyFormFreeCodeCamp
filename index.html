@@ -7,17 +7,98 @@
     <title>Document</title>
   </head>
   <body>
-
     <div class="wrapper-size">
       <div class="title-content">
         <p class="tagline">Are you a true Fan?</p>
         <h1 class="title">Lord of the Rings</h1>
         <p class="intro-text">
           “We swears to serve the master of the Precious. We will swear on… on…
-          on the Precious!” <br>
+          on the Precious!” <br />
           – Gollum
         </p>
       </div>
+
+      <section class="survey-container">
+        <div class="question-container first-question-padding">
+          <p class="question-title">
+            First of all, are you ready to join the fellowship of the ring?
+          </p>
+          <form>
+            <div class="flex-wrapper-sb">
+              <div class="flex-container-column">
+                <label class="small-label" for="fname">name</label>
+                <input
+                  class="input-text"
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Gandalf"
+                />
+              </div>
+              <div class="flex-container-column">
+                <label class="small-label" for="fsurname">surname</label>
+                <input
+                  class="input-text"
+                  type="text"
+                  id="fsurname"
+                  name="fsurname"
+                  placeholder="The Grey"
+                />
+              </div>
+              <div class="flex-container-full">
+                <label class="small-label" for="femail">email address</label>
+                <input
+                  class="input-text"
+                  type="email"
+                  id="femail"
+                  name="fmail"
+                  placeholder="awizardisneverlate@mail.com"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="question-container">
+          <p class="question-title">
+            How many of the Lord of the Ring’s books have you read?
+          </p>
+          <form>
+            <label for="fnumber"></label>
+            <input
+              class="input-text"
+              type="number"
+              min="1"
+              max="3"
+              id="fnumber"
+              name="fnumber"
+              placeholder="1-3"
+            />
+          </form>
+        </div>
+        <div class="question-container">
+          <p class="question-title">
+            Hobbits eat seven meals a day. Select the ones you know.
+          </p>
+          <form>
+            <div class="checkbox-container">
+              <input type="checkbox" id="afternoon"/>
+              <label for="afternoon">afternoon tea</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="luncheon"/>
+              <label for="luncheon">luncheon</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="elevensies"/>
+              <label for="elevensies">elevensies</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="brunch"/>
+              <label for="brunch">brunch</label>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   </body>
 </html>
