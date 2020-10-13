@@ -58,6 +58,7 @@
             </div>
           </form>
         </div>
+
         <div class="question-container">
           <p class="question-title">
             How many of the Lord of the Ring’s books have you read?
@@ -75,30 +76,97 @@
             />
           </form>
         </div>
+
         <div class="question-container">
           <p class="question-title">
             Hobbits eat seven meals a day. Select the ones you know.
           </p>
           <form>
-            <div class="checkbox-container">
-              <input type="checkbox" id="afternoon"/>
-              <label for="afternoon">afternoon tea</label>
-            </div>
-            <div class="checkbox-container">
-              <input type="checkbox" id="luncheon"/>
-              <label for="luncheon">luncheon</label>
-            </div>
-            <div class="checkbox-container">
-              <input type="checkbox" id="elevensies"/>
-              <label for="elevensies">elevensies</label>
-            </div>
-            <div class="checkbox-container">
-              <input type="checkbox" id="brunch"/>
-              <label for="brunch">brunch</label>
+            <!-- nettoyer noms classes -->
+            <div class="flex-wrapper-sb">
+              <div class="checkbox-container checkbox-margin">
+                <input type="checkbox" id="afternoon" />
+                <label for="afternoon">afternoon tea</label>
+              </div>
+              <div class="checkbox-container checkbox-margin">
+                <input type="checkbox" id="luncheon" />
+                <label for="luncheon">luncheon</label>
+              </div>
+              <div class="checkbox-container">
+                <input type="checkbox" id="elevensies" />
+                <label for="elevensies">elevensies</label>
+              </div>
+              <div class="checkbox-container">
+                <input type="checkbox" id="brunch" />
+                <label for="brunch">brunch</label>
+              </div>
             </div>
           </form>
         </div>
+
+        <div class="question-container">
+          <p class="question-title">
+            In “The Fellowship of the Ring” what gift does Lady Galadriel give
+            Gimli before the fellowship leaves Lothlorien?
+          </p>
+          <div class="custom-select">
+            <select class="form-item__element--select">
+              <option disabled="disabled" selected="selected">
+                Select an answer
+              </option>
+              <option value="">A dagger</option>
+              <option value="">Three strands of her hair</option>
+              <option value="">An elvish bow and arrow</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <p class="question-title">
+            Did you watch the extended version of the Lord of the Ring’s movies?
+          </p>
+          <div class="radio-container">
+            <div class="radio-content">
+              <input type="radio" id="obv" name="extended-films" />
+              <label for="obv">Obviously</label>
+            </div>
+            <div class="radio-content">
+              <input type="radio" id="nope" name="extended-films" />
+              <label for="nope">Nope</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <p class="question-title">
+            Tell us in a few lines the kind of Middle-Earth inhabitant you think
+            you would be:
+          </p>
+          <div class="textarea">
+            <textarea
+              name="story"
+              id="story"
+              cols="30"
+              rows="10"
+              placeholder="When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton…"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="question-container last-question">
+          <p class="question-title">Ready to go on an adventure?</p>
+          <button class="button" type="button">Let's go!</button>
+        </div>
       </section>
     </div>
+
+    <footer>
+      <div class="credits-container">
+        <p class="credits">
+          Coded with love by Ronrons Celestes - Design by Hugo Leloup –
+          Copyright 2020
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

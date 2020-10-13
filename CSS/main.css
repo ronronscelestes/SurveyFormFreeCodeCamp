@@ -41,6 +41,7 @@ body {
 .title-content {
     color: rgba(229, 224, 220, 1);
     max-width: 832px;
+    margin: 0 48px 0 48px;
 }
 
 .tagline {
@@ -64,8 +65,39 @@ body {
     margin-bottom: 160px;
 }
 
-@media {
+@media (max-width: 800px) {
+    .tagline {
+        font-size: 24px;
+    }
 
+    .title {
+        font-size: 80px;
+        line-height: 1.2em;
+    }
+}
+
+@media (max-width: 425px) {
+    .tagline {
+        font-size: 16px;
+        line-height: 1.5em;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 56px;
+        line-height: 64px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+        line-height: 1.7em;      
+    }
+}
+
+@media (max-width: 425px) {
+    .title-content {
+        margin: 0 16px;
+    }
 }
 
 /* form survey container section */
@@ -73,17 +105,26 @@ body {
 .survey-container {
     max-width: 1082px;
     background: rgba(238, 231, 223, 1);
+    margin: 0 48px;
 }
 
-/* first question */
+@media (max-width: 425px) {
+    .survey-container {
+        margin: 0 16px;
+    }
+}
+
+/* QUESTION1 INPUT NAME / EMAIL*/
 .first-question-padding {
     padding-top: 61px;
 }
 
 .question-container {
-    max-width: 763px;
+    max-width: 940px;
     margin: 0 auto;
     margin-bottom: 120px;
+    padding-left: 88px;
+    padding-right: 88px;
 }
 
 .question-title {
@@ -129,13 +170,11 @@ body {
     font-family: 'Aniron';
     font-size: 18px;
     color: rgba(0, 0, 0, 0.8);
-
 }
 
 input::placeholder {
     font-family: Aniron;
     font-size: 18px;
-    line-height: 26px;
     color: rgba(129, 117, 106, 0.6);
 
 }
@@ -145,7 +184,35 @@ input:focus {
     border-bottom: 1px solid rgba(83, 68, 60, 0.6);
 }
 
-/* quesion two */
+@media (max-width: 800px) {
+    .flex-container-column {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .question-container {
+        max-width: 940px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .question-title {
+        font-size: 14px; 
+    }
+
+    .input-text {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+}
+
+
+/* QUESTION2 INPUT NUMBER*/
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -153,17 +220,25 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-/* question three */
-
+/* QUESTION3 CHECKBOX*/
 
 .checkbox-container {
+    flex-basis: 45%;
 }
+
+.checkbox-margin {
+    margin-bottom: 32px;
+}
+
+/* styling checkbox/checkmark */
 
 .checkbox-container label {
     cursor: pointer;
     display: flex;
     font-size: 18px;
+    white-space: nowrap;
     color: rgba(0, 0, 0, 0.8);
+    position: relative;
 }
 
 .checkbox-container input[type='checkbox'] {
@@ -174,16 +249,260 @@ input[type=number]::-webkit-outer-spin-button {
 
 .checkbox-container label::before {
     content: '';
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background: #E9E0D8;
     border: 1px solid rgba(83, 68, 60, 0.7);
     border-radius: 4px;
     margin-right: 16px;
 }
 
-/* WHY OH WHY */
-/* .checkbox-container label:hover::before, */
-.checkbox-container input[type='checkbox']:hover + label::before {
+.checkbox-container label:hover::before {
     background: rgba(221, 208, 198, 1);
+    transition: all 0.1s ease;
 }
+
+.checkbox-container input[type='checkbox']:checked + label::before {
+    background: rgba(83, 68, 60, 1);
+    transition: all 0.1s ease;
+}
+
+.checkbox-container input[type='checkbox']:checked + label::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 16px;
+    top: 7px;
+    width: 10px;
+    height: 20px;
+    border: solid rgba(255, 255, 255, 0.8);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 800px) {
+    .checkbox-container {
+        flex-basis: 100%;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 425px) {
+    .checkbox-container label {
+        font-size: 12px;
+    }
+}
+
+/* QUESTION4 SELECT BOX */
+
+select {
+    font-family: 'Aniron';
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+    background: rgba(233, 224, 216, 1);
+    width: 100%;
+    height: 66px;
+    padding-left: 16px;
+    appearance: none;
+}
+
+select:focus,
+select:hover {
+    outline: none;
+    background: rgba(221, 208, 198, 0.6);
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: solid rgba(0, 0, 0, 0.6);;
+    border-width: 0 3px 3px 0;
+    border-radius: 0 0 3px 0;
+    top: 26px;
+    right: 27px;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+@media (max-width: 425px) {
+    select {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .custom-select::before {
+        width: 6px;
+        height: 6px;
+        top: 15px;
+        right: 10px;
+        border-width: 0 2px 2px 0;
+    }
+}
+
+/* QUESTION5 RADIO */
+
+.radio-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-content {
+    flex-basis: 50%;
+}
+
+.radio-container [type="radio"] {
+    display: none;
+}
+
+.radio-container label {
+    position: relative;
+    cursor: pointer;
+    padding-right: 48px;
+}
+
+.radio-container label:nth-last-child(1) {
+    padding-right: 0;
+}
+
+.radio-container label::before {
+    content: '';
+    border: 1px solid rgba(83, 68, 60, 0.7);
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: #E9E0D8;
+    border-radius: 50%;
+    margin: -8px 15px; 
+    margin-left: 0;
+}
+
+.radio-container label:hover::before {
+    background: rgba(221, 208, 198, 1);
+    transition: all 0.1s ease;
+}
+
+.radio-container label::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(83, 68, 60, 0);
+    left: 9px;
+    top: 6px;
+    border-radius: 50%;
+    transition: all 0.1s ease;
+}
+
+.radio-container input[type="radio"]:checked + label::after {
+    background: rgba(83, 68, 60, 1);
+}
+
+@media (max-width: 800px) {
+    .radio-container {
+        flex-direction: column;
+    }
+
+    .radio-content {
+        margin-bottom: 32px;
+    }
+
+    .radio-content:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .radio-container label {
+        font-size: 12px;
+    }
+}
+
+/* QUESTION6 TEXTAREA */
+
+.textarea textarea::placeholder {
+    font-family: Aniron;
+    font-size: 18px;
+    line-height: 1.4em;
+    color: rgba(129, 117, 106, 0.6);
+}
+
+.textarea textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: Aniron;
+    font-size: 18px;
+    line-height: 1.4em;
+    width: 100%;
+    height: 300px;
+    background: rgba(233, 224, 216, 1);
+    padding: 20px 16px;
+    caret-color: rgba(83, 68, 60, 1);
+}
+
+@media (max-width: 425px) {
+    .textarea textarea::placeholder {
+        font-size: 12px;
+    }
+
+    .textarea textarea {
+        font-size: 12px;
+    }
+}
+
+/* LAST QUESTION + BUTTON*/
+.last-question {
+    text-align: center;
+}
+
+.button {
+    border: none;
+    background-color: rgba(116, 120, 54, 1);
+    padding: 32px 80px;
+    font-family: Aniron;
+    font-size: 28px;
+    line-height: 1.3em;
+    color: #FFFFFF;
+    transform: translateY(50%);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(100, 100, 40, 1);
+    transform: translateY(49%)
+}
+
+@media (max-width: 425px) {
+    .button {
+        font-size: 14px;
+        padding: 12px 78px;
+    }
+}
+
+/* CREDITS */
+
+.credits-container {
+    margin: 200px 0 20px 0;
+}
+
+.credits {
+    font-family: Ringbearer;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: lowercase;
+    color: rgba(238, 231, 223, 0.5);
+    text-align: center;
+}
+
