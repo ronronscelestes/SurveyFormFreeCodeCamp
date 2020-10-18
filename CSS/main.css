@@ -512,3 +512,8 @@ select:hover {
     text-align: center;
 }
 
+.hugocredits {
+    text-decoration: none;
+    color: rgba(238, 231, 223, 0.5);
+}
+
